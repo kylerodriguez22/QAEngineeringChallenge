@@ -22,9 +22,9 @@ export const PartsOfMachine = ({
     <>
       {parts && (
         <>
-          <Text style={styles.title}>{machineName}</Text>
+          <Text testID={machineName} style={styles.title}>{machineName}</Text>
           {Object.keys(parts).map((key) => (
-            <Text key={key}>
+            <Text testID={key} key={key}>
               {key}: {parts[key]}
             </Text>
           ))}

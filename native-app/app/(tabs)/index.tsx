@@ -52,7 +52,7 @@ export default function StateScreen() {
     <View style={styles.container}>
       <View style={styles.separator} />
       {!machineData && (
-        <Link href='/two' style={styles.link}>
+        <Link href='/two' style={styles.link} testID='log-a-part-link'>
           <Text style={styles.linkText}>
             Please log a part to check machine health
           </Text>
@@ -81,15 +81,15 @@ export default function StateScreen() {
             lightColor='#eee'
             darkColor='rgba(255,255,255,0.1)'
           />
-          <Text style={styles.title}>Factory Health Score</Text>
-          <Text style={styles.text}>
+          <Text testID='factory-health' style={styles.title}>Factory Health Score</Text>
+          <Text testID='factory-health-score' style={styles.text}>
             {machineData?.scores?.factory
               ? machineData?.scores?.factory
               : 'Not yet calculated'}
           </Text>
           {machineData?.scores?.machineScores && (
             <>
-              <Text style={styles.title2}>Machine Health Scores</Text>
+              <Text testID='machine-health' style={styles.title2}>Machine Health Scores</Text>
               {Object.keys(machineData?.scores?.machineScores).map((key) => (
                 <MachineScore
                   key={key}
@@ -106,10 +106,11 @@ export default function StateScreen() {
         lightColor='#eee'
         darkColor='rgba(255,255,255,0.1)'
       />
-      <Button title='Calculate Health' onPress={calculateHealth} />
+      <Button title='Calculate Health' onPress={calculateHealth} testID='calc-health-btn'/>
       <View style={styles.resetButton}>
         <Button
-          title='Reset Machine Data'
+          title='Reset Machine Data' 
+          testID='reset-data-btn'
           onPress={async () => await resetMachineData()}
           color='#FF0000'
         />

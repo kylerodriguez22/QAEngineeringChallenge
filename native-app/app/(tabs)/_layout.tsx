@@ -28,6 +28,7 @@ export default function TabLayout() {
         options={{
           title: 'Machine State',
           tabBarIcon: ({color}) => <TabBarIcon name='list-ul' color={color} />,
+          tabBarTestID: 'machine-state-tab'
         }}
       />
       <Tabs.Screen
@@ -35,6 +36,7 @@ export default function TabLayout() {
         options={{
           title: 'Log Part',
           tabBarIcon: ({color}) => <TabBarIcon name='edit' color={color} />,
+          tabBarTestID: 'log-part-tab'
         }}
       />
     </Tabs>

@@ -28,7 +28,26 @@ To run the app, use the following command:
 yarn start
 ```
 
+
 This will launch the Expo development server, and you can access the app on your device using the Expo Go app or an emulator. You can hit `i` or `a` on the keyboard to launch the ios or android app respectively.
+
+### Additional Dependicies
+```bash
+npm install cors
+```
+This enables the two servers (backend and native-app to communicate). Verify dependency is added to package.json for native and backend.
+
+```bash
+yarn add cypress
+```
+This adds cypress for UI regression testing
+
+### Cypress Setup
+```bash
+yarn run cypress open
+```
+In the browser that opens up, select E2E tests to configure and then Continue and finally select your preferred browser. This will create the necessary directories to run the cypress tests if you don't have them.
+After initial setup, in the cypress window click "Start E2E testing in..." and select the layout specs "regression.cy.js" file kicking off the UI tests
 
 ## Project Structure
 

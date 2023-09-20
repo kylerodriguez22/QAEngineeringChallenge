@@ -51,6 +51,15 @@ curl -X POST -H "Content-Type: application/json" -d '{
   }
 }' http://localhost:3001/machine-health
 ```
+```bash
+$response = Invoke-WebRequest -Uri "http://localhost:3001/machine-health" `
+    -Method Post `
+    -ContentType "application/json" `
+    -Body "{`n  `"machines`": {`n    `"weldingRobot`": {`n      `"errorRate`": `"0.5`",`n      `"vibrationLevel`": `"2.5`"`n    }`n  }`n}"
+
+$response
+```
+Adding additional command for Windows terminal
 
 The response will include the machine name and its health score.
 

@@ -24,6 +24,7 @@ export const MachineScore = ({
         <>
           <Text
             style={styles.text}
+            testID={machineName + '-score'}
           >{`${machineNames[machineName]}: ${score}`}</Text>
         </>
       )}

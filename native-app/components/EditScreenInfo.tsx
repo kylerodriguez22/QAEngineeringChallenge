@@ -16,7 +16,7 @@ export default function EditScreenInfo({path}: {path: string}) {
 
   const machineNames = [
     {label: 'Welding Robot', value: MachineType.WeldingRobot},
-    {label: 'PaintingStation', value: MachineType.PaintingStation},
+    {label: 'Painting Station', value: MachineType.PaintingStation},
     {label: 'Assembly Line', value: MachineType.AssemblyLine},
     {
       label: 'Quality Control Station',
@@ -128,9 +128,10 @@ export default function EditScreenInfo({path}: {path: string}) {
         value={partValue}
         onChangeText={(text) => setPartValue(text)}
         placeholder='Enter part value'
+        testID='part-value-input-box'
       />
 
-      <Button title='Save' onPress={savePart} />
+      <Button title='Save' testID='save-btn' onPress={savePart} />
 
       {isSaved && <Text style={styles.healthScore}>Saved ✔️</Text>}
     </View>
